@@ -1,0 +1,74 @@
+# chrome_preferences_replace/Makefile.toml
+# https://github.com/sagiegurari/cargo-make
+
+[config]
+skip_core_tasks = true
+
+[tasks.default]
+description = "help for prepared make tasks"
+clear = true
+script= [
+"clear",
+"echo ",
+"echo COMMANDS AND MAKE TASKS:",
+"echo ",
+"echo $ clear - clear the screen",
+"echo $ cargo make - this list",
+"echo ",
+"echo $ cargo make release - build release version, increment semver patch in Cargo.toml",
+"echo $ cargo make release_and_run - build and run release version, increment semver patch in Cargo.toml",
+"echo $ cargo make run_rel1 - target/release/${CARGO_MAKE_CRATE_NAME} ~/rustprojects/chrome_preferences_replace/sample_data/Preferences",
+"echo $ cargo make run_rel2 - target/release/${CARGO_MAKE_CRATE_NAME} \\\"/mnt/c/Users/Luciano/AppData/Local/Google/Chrome/User Data/Default/Preferences\\\"",
+"echo ",
+]
+
+# end of help
+# end of help
+# end of help
+
+[tasks.release]
+description = "cargo build release"
+clear = true
+script = [
+    "clear",
+    # Binaries version is date
+    # "echo $ lmake_version_from_date",
+    # "lmake_version_from_date",
+    # Library version is semver
+    "echo $ lmake_semver --increment=patch",
+    "lmake_semver --increment=patch",
+    "echo $ cargo fmt",
+    "cargo fmt",
+    "echo $ cargo build --release",
+    "cargo build --release",
+]
+
+[tasks.release_and_run]
+description = "cargo build release and run"
+clear = true
+dependencies = [
+    "release",
+    "run_rel1",
+]
+
+[tasks.run_rel1]
+description = "target/release/${CARGO_MAKE_CRATE_NAME} ~/rustprojects/chrome_preferences_replace/sample_data/Preferences"
+clear = true
+script = [
+    "clear",
+    "echo $ target/release/${CARGO_MAKE_CRATE_NAME} ~/rustprojects/chrome_preferences_replace/sample_data/Preferences",
+    "target/release/${CARGO_MAKE_CRATE_NAME} ~/rustprojects/chrome_preferences_replace/sample_data/Preferences",
+]
+
+[tasks.run_rel2]
+description = "target/release/${CARGO_MAKE_CRATE_NAME} \"/mnt/c/Users/Luciano/AppData/Local/Google/Chrome/User Data/Default/Preferences\""
+clear = true
+script = [
+    "clear",
+    "echo $ target/release/${CARGO_MAKE_CRATE_NAME} \\\"/mnt/c/Users/Luciano/AppData/Local/Google/Chrome/User Data/Default/Preferences\\\"",
+    "target/release/${CARGO_MAKE_CRATE_NAME} \"/mnt/c/Users/Luciano/AppData/Local/Google/Chrome/User Data/Default/Preferences\"",
+]
+
+# end of release scripts
+# end of release scripts
+# end of release scripts
