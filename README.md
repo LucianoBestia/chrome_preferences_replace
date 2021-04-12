@@ -16,7 +16,8 @@ So it will avoid to show the dreadful "Restore" dialog.
 
 The first and only argument is the path to the Preferences file.  
 The program is compiled in WSL2 and it is a Linux program.  
-It is simple to run this little program from Win10:  
+It will work only on computers that have WSL2 enabled with a Linux OS.  
+It is simple to run this little program from Win10 command prompt:  
 `wsl ~/rustprojects/chrome_preferences_replace/target/release/chrome_preferences_replace "/mnt/c/Users/Luciano/AppData/Local/Google/Chrome/User Data/Default/Preferences"`  
 
 ## development
@@ -24,3 +25,16 @@ It is simple to run this little program from Win10:
 Cargo-make is a utility to write simple "scripts" to use in development.  
 I use it to store in one place all the commands that I frequently use in development.  
 <https://github.com/sagiegurari/cargo-make>  
+
+## for my Thinkpad computer
+
+after copying the files, make it executable in Linux
+`sudo chmod +x chrome_preferences_replace`
+
+put this action in the win10 scheduler on logon:
+
+`wsl ~/chrome_preferences_replace/chrome_preferences_replace "/mnt/c/Users/happy guest/Documents/ChromeProfiles/Profile1/Default/Preferences"`  
+
+And after the first trial I crashed the wsl2 somehow. Now in `cmd` when I write `wsl` I get the error `The system cannot find the path specified.`  
+I didn't do anything special, just started the `wsl` on logon from the Scheduler. It looks like there is no way to recover. I must unregister and install Debian again. What a disappointment.  
+And so Microsoft gently pushes people to write a Win exe instead of a linux exe. Pretty standard.  
