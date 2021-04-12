@@ -53,3 +53,4 @@ I then used `PowerShell` to work with Rust, because it can work with UNC paths. 
 `cd \\wsl$\Debian\home\luciano\rustprojects\chrome_preferences_replace\`  
 and then `cargo build --release`.  
 Now I have the windows exe in the `target/release` folder.  
+All from the same rust source code. Nice.  
