@@ -28,7 +28,8 @@ I use it to store in one place all the commands that I frequently use in develop
 
 ## for my Thinkpad computer
 
-after copying the files, make it executable in Linux
+I enabled wsl2 and installed Debian.  
+After copying the chrome_preferences_replace file, make it executable in Linux
 `sudo chmod +x chrome_preferences_replace`
 
 put this action in the win10 scheduler on logon:
@@ -37,4 +38,17 @@ put this action in the win10 scheduler on logon:
 
 And after the first trial I crashed the wsl2 somehow. Now in `cmd` when I write `wsl` I get the error `The system cannot find the path specified.`  
 I didn't do anything special, just started the `wsl` on logon from the Scheduler. It looks like there is no way to recover. I must unregister and install Debian again. What a disappointment.  
-And so Microsoft gently pushes people to write a Win exe instead of a linux exe. Pretty standard.  
+And so Microsoft gently pushes people to write a Win exe instead of a linux exe. Pretty standard for MS.  
+
+## building a Win exe
+
+On my development machine Win10 I installed rustup from <https://www.rust-lang.org/tools/install>. That installation was painless. A little slow on the rust-docs part (interestingly in Linux this part is super quick), but all in all not bad.  
+But I need also the `MSVC C++ Build tools` from MS. That was a pain. It is downloading 1.6Gb of something. What is so big? It installed over 4GB of something? The installation lasted forever.  
+First I downloaded `Build Tools for Visual Studio 2019` from <https://visualstudio.microsoft.com/downloads/> under `Tools for Visual Studio 2019`.
+It is something like `vs_buildtools__1867578767.1618229149.exe`.  
+Run it and select `C++ Tools`. While in the C++ Tools you have to select "Windows 10 SDK" as well. There will be multiple options, go with the highest version number.  
+[2020_04_19_add_sdk.png]()
+
+I then used `PowerShell` to work with Rust, because it can work with UNC paths. The command prompt cannot use the `\\wsl$\Debian` path as active directory.  
+I then `cargo build --release` inside `\\wsl$\Debian\home\luciano\rustprojects\chrome_preferences_replace\`.  
+Now I have the windows exe in the `target/release` folder.  
