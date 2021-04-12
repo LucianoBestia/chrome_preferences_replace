@@ -47,8 +47,9 @@ But I need also the `MSVC C++ Build tools` from MS. That was a pain. It is downl
 First I downloaded `Build Tools for Visual Studio 2019` from <https://visualstudio.microsoft.com/downloads/> under `Tools for Visual Studio 2019`.
 It is something like `vs_buildtools__1867578767.1618229149.exe`.  
 Run it and select `C++ Tools`. While in the C++ Tools you have to select "Windows 10 SDK" as well. There will be multiple options, go with the highest version number.  
-[2020_04_19_add_sdk.png]()
+![C++ build tools](https://github.com/LucianoBestia/chrome_preferences_replace/raw/main/img/2020_04_19_add_sdk.png)
 
 I then used `PowerShell` to work with Rust, because it can work with UNC paths. The command prompt cannot use the `\\wsl$\Debian` path as active directory.  
-I then `cargo build --release` inside `\\wsl$\Debian\home\luciano\rustprojects\chrome_preferences_replace\`.  
+`cd \\wsl$\Debian\home\luciano\rustprojects\chrome_preferences_replace\`  
+and then `cargo build --release`.  
 Now I have the windows exe in the `target/release` folder.  
