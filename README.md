@@ -28,6 +28,7 @@ I use it to store in one place all the commands that I frequently use in develop
 
 ## for my Thinkpad computer
 
+I use my Thinkpad laptop for my living room big TV screen. After automatic logon I open a few chrome windows with clock, calendar, radio. I want this chrome instances to open without the dreadful Restore dialog.  
 I enabled wsl2 and installed Debian.  
 After copying the chrome_preferences_replace file, make it executable in Linux
 `sudo chmod +x chrome_preferences_replace`
@@ -54,3 +55,9 @@ I then used `PowerShell` to work with Rust, because it can work with UNC paths. 
 and then `cargo build --release`.  
 Now I have the windows exe in the `target/release` folder.  
 All from the same rust source code. Nice.  
+
+On my Thinkpad laptop I can now create 2 Scheduler tasks for my 2 chrome profiles:  
+`c:\BestiaAutomation\chrome_preferences_replace\chrome_preferences_replace.exe "c:\Users\happy guest\Documents\ChromeProfiles\Profile1\Default\Preferences"`  
+
+and  
+`c:\BestiaAutomation\chrome_preferences_replace\chrome_preferences_replace.exe "c:\Users\happy guest\AppData\Local\Google\Chrome\User Data\Default\Preferences"`  
