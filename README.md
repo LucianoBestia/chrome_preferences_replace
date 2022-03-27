@@ -1,5 +1,8 @@
 # chrome_preferences_replace
 
+**Windows exe to avoid crashed dialog in Chrome**  
+***version: 1.0  date: 2021-04-16 author: [dev_Bestia](https://bestia.dev) repository: [GitHub](https://github.com/LucianoBestia/chrome_preferences_replace)***  
+
 It is annoying that Chrome shows the "Restore" dialog after it crashes for any reason.  
 Chrome on start reads the file `preferences` and search for `"exit_type":"Crashed","exited_cleanly":false,`  
 The file is in the `profile` directory that Chrome uses.  
