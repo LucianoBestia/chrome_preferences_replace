@@ -1,7 +1,7 @@
 # chrome_preferences_replace
 
 **Windows exe to avoid crashed dialog in Chrome**  
-***version: 1.0  date: 2021-04-16 author: [dev_Bestia](https://bestia.dev) repository: [GitHub](https://github.com/LucianoBestia/chrome_preferences_replace)***  
+***version: 1.0  date: 2021-04-16 author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/bestia-dev/chrome_preferences_replace)***  
 
 It is annoying that Chrome shows the "Restore" dialog after it crashes for any reason.  
 Chrome on start reads the file `preferences` and search for `"exit_type":"Crashed","exited_cleanly":false,`  
@@ -51,7 +51,7 @@ But I need also the `MSVC C++ Build tools` from MS. That was a pain. It is downl
 First I downloaded `Build Tools for Visual Studio 2019` from <https://visualstudio.microsoft.com/downloads/> under `Tools for Visual Studio 2019`.
 It is something like `vs_buildtools__1867578767.1618229149.exe`.  
 Run it and select `C++ Tools`. While in the C++ Tools you have to select "Windows 10 SDK" as well. There will be multiple options, go with the highest version number.  
-![C++ build tools](https://github.com/LucianoBestia/chrome_preferences_replace/raw/main/img/2020_04_19_add_sdk.png)
+![C++ build tools](https://github.com/bestia-dev/chrome_preferences_replace/raw/main/img/2020_04_19_add_sdk.png)
 
 I then used `PowerShell` to work with Rust, because it can work with UNC paths. The command prompt cannot use the `\\wsl$\Debian` path as active directory.  
 `cd \\wsl$\Debian\home\luciano\rustprojects\chrome_preferences_replace\`  
