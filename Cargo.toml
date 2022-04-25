@@ -3,6 +3,7 @@ name = "chrome_preferences_replace"
 version = "1.1.9"
 description = "Replaces exit_type and exited_cleanly inside the Preferences file to avoid the Restore dialog"
 authors = ["bestia.dev"]
+homepage = "https://bestia.dev"
 edition = "2018"
 publish = false
 
