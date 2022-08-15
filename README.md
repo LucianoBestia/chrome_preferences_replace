@@ -3,7 +3,7 @@
 **Windows exe to avoid crashed dialog in Chrome**  
 ***version: 1.0  date: 2021-04-16 author: [bestia.dev](https://bestia.dev) repository: [GitHub](https://github.com/bestia-dev/chrome_preferences_replace)***  
 
-![Hits](https://bestia.dev/webpage_hit_counter/get_svg_image/871700383)
+![Hits](https://bestia.dev/webpage_hit_counter/get_svg_image/871700383.svg)
 
 Hashtags: #rustlang #windows
 
